@@ -1,0 +1,6 @@
+.env
+*.pyc
+
+*.yaml
+
+data/pingdb.json

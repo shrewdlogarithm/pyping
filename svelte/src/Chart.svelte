@@ -41,7 +41,12 @@
       LogarithmicScale
     );
 
+    let chart
+    // setInterval(function() {
+    //   console.log(chart,data)
+    //   data.datasets[0].hidden = !data.datasets[0].hidden
+    // },1000)
   </script>
   
-  <Line {data} {options} {updateMode}/>
+  <Line bind:chart {data} {options} {updateMode}/>
   
