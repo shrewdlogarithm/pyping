@@ -26,7 +26,7 @@ def getdataframe(stime=None,etime=None):
         return robj
     if updated:
         pings = connection.execute('SELECT * FROM pings WHERE (?1 is NULL or dtime >= ?1) and (?2 IS NULL or dtime <= ?2)',(stime,etime)).fetchall()
-        if totime == 0:
+        if totime == 0 and len(pings) > 0:
             totime = datetime.strptime(pings[len(pings)-1]["dtime"],dateform) - datetime.strptime(pings[0]["dtime"],dateform)
         mpings = map(todict,pings)
         df = pd.DataFrame(mpings)
